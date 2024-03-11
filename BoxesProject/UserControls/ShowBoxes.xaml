@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="BoxesProject.UserControls.ShowBoxes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BoxesProject.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="AntiqueWhite">
+            <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock Text="Available Boxes:" FontSize="20" FontWeight="ExtraBold" FontFamily="David"/>
+            </Viewbox>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" HorizontalAlignment="Right">
+                <Viewbox Margin="5,0,0,0">
+                    <ListBox x:Name="listBox" Background="BurlyWood" BorderBrush="BlanchedAlmond" BorderThickness="3" Foreground="Black" FontSize="7"
+                     Height="160" Width="270"/>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+               
+                <local:MenuButton x:Name="btnFind" Grid.Row="1"/>
+                <local:MenuButton x:Name="btnBuy" Grid.Row="5"/>
+                <local:MenuButton x:Name="btnShowAllBoxes" Grid.Row="6"/>
+                <local:MenuButton x:Name="btnReturn" Grid.Row="7"/>
+
+                <Viewbox Grid.Row="0" Margin="5,0,0,0">
+                    <TextBlock Text="Find box for a gift:" Foreground="White" FontFamily="David" FontWeight="UltraBlack"/>
+                </Viewbox>
+                <Viewbox Grid.Row="2">
+                    <local:ClearableTextBox x:Name="heightText" BoundText="Height" MinWidth="255" MinHeight="50" MaxWidth="400" MaxHeight="130"/>
+                </Viewbox>
+                <Viewbox Grid.Row="3">
+                    <local:ClearableTextBox x:Name="baseText" BoundText="Base" MinWidth="255" MinHeight="50" MaxWidth="400" MaxHeight="130"/>
+                </Viewbox>
+                <Viewbox Grid.Row="4">
+                    <local:ClearableTextBox x:Name="quantityText" BoundText="Quantity" MinWidth="255" MinHeight="50" MaxWidth="400" MaxHeight="130"/>
+                </Viewbox>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

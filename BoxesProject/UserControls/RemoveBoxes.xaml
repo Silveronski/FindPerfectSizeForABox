@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="BoxesProject.UserControls.RemoveBoxes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BoxesProject.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="AntiqueWhite">
+            <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock x:Name="title" Text="Find boxes that haven't been purchased T hours:" FontSize="20" FontWeight="ExtraBold" FontFamily="David"/>
+            </Viewbox>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" HorizontalAlignment="Right">
+                <Viewbox Margin="5,0,0,0">
+                    <ListBox x:Name="listBox" Background="BurlyWood" BorderBrush="BlanchedAlmond" BorderThickness="3" Foreground="Black" FontSize="7"
+                     Height="160" Width="270"/>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                                
+                <Viewbox Grid.Row="0">
+                    <local:ClearableTextBox x:Name="timeText" BoundText="Amount of Hours" MinWidth="255" MinHeight="50" MaxWidth="400" MaxHeight="130"/>
+                </Viewbox>
+
+                <local:MenuButton x:Name="btnFind" Grid.Row="1" MaxHeight="200"/>
+                <local:MenuButton x:Name="btnRemove" Grid.Row="2" MaxHeight="200"/>
+                <local:MenuButton x:Name="btnRemoveAll" Grid.Row="3" MaxHeight="200"/>
+                <local:MenuButton x:Name="btnReturn" Grid.Row="4" MaxHeight="200"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

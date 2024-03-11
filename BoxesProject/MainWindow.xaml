@@ -1,0 +1,54 @@
+﻿<Window x:Class="BoxesProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BoxesProject"
+        xmlns:userControls="clr-namespace:BoxesProject.UserControls"
+        mc:Ignorable="d"
+        Title="Boxes Project" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid x:Name="mainMenu" Background="Black">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="AntiqueWhite">
+                <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <TextBlock Text="Ron's boxes storage facility" FontSize="20" FontWeight="ExtraBold" FontFamily="David"/>
+                </Viewbox>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <userControls:MenuButton x:Name="btnAddRestockBox" Grid.Row="0" Grid.Column="1"/>
+                <userControls:MenuButton x:Name="btnShowBoxes" Grid.Row="1" Grid.Column="1"/>
+                <userControls:MenuButton x:Name="btnRemoveBoxes" Grid.Row="2" Grid.Column="1"/>
+                <userControls:MenuButton x:Name="btnExit" Grid.Row="3" Grid.Column="1"/>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="AddOrRestockBoxGrid" Visibility="Collapsed">
+            <userControls:AddOrRestockBox x:Name="AddOrRestockBoxControl"/>
+        </Grid>
+        <Grid x:Name="ShowBoxesGrid" Visibility="Collapsed">
+            <userControls:ShowBoxes x:Name="ShowBoxesControl"/>
+        </Grid>
+        <Grid x:Name="RemoveBoxesGrid" Visibility="Collapsed">
+            <userControls:RemoveBoxes x:Name="RemoveBoxesControl"/>
+        </Grid>
+    </Grid>
+</Window>
