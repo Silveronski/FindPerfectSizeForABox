@@ -27,10 +27,8 @@
         }
 
         private static string GetHashKey(Box box)
-        {
-            string height = box.Height.ToString();
-            string Base = box.Base.ToString();
-            return height + "," + Base; 
+        {           
+            return box.Height.ToString(); + "," + box.Base.ToString(); 
         }       
 
         public static void ValidateBoxProperties(string boxHeight, string boxBase, string boxQuantity)
